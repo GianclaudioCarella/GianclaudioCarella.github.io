@@ -11,7 +11,7 @@ Below, I will describe the steps for this project.
 - [x] Push Changes
 
 ## Angular
-- [ ] Instalation
+- [x] Instalation
 - [ ] Bootstrap Configuration
 - [ ] Theme Configuration
 
