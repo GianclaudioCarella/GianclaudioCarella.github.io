@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gianclaudiocarella.github.io/sitemap-index.xml

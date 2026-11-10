@@ -1,0 +1,46 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Live deploys only after a merge or push to master — not from pull requests.
+  push:
+    branches: [master]
+  # Optional manual run from the Actions tab, still against this workflow file
+  # on the default branch once Pages is switched to GitHub Actions.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Read Node version
+        id: nvmrc
+        run: echo "version=$(cat .nvmrc)" >> "$GITHUB_OUTPUT"
+      - name: Build with Astro
+        uses: withastro/action@v6
+        # Installs dependencies, runs the site build (including Pagefind via
+        # npm's postbuild hook when `package-manager` is npm), and uploads ./dist.
+        with:
+          node-version: ${{ steps.nvmrc.outputs.version }}
+          package-manager: npm
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

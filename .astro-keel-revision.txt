@@ -1,0 +1,2 @@
+Theme source: https://github.com/kpab/astro-keel
+Pinned revision: 0c901a19ade116f6d0a8b6d3b48ec83b060334bb (v0.2.0-28-g0c901a1)
