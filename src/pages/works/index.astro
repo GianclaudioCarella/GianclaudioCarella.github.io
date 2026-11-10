@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/url';
+import { SITE } from '../../consts';
+import { t } from '../../i18n';
+
+const works = (await getCollection('works')).sort((a, b) => {
+  const orderA = a.data.order ?? Number.MAX_SAFE_INTEGER;
+  const orderB = b.data.order ?? Number.MAX_SAFE_INTEGER;
+  if (orderA !== orderB) return orderA - orderB;
+  return b.data.publishDate.valueOf() - a.data.publishDate.valueOf();
+});
+---
+
+<BaseLayout title={t('works.title')} description={`Selected projects by ${SITE.author}.`}>
+  <section class="page-head section">
+    <p class="eyebrow">{t('works.eyebrow')}</p>
+    <h1>Selected projects.</h1>
+    <p class="lead">
+      A short list of work I can share publicly. More case studies will appear here over time.
+    </p>
+  </section>
+
+  <section class="section" aria-label={t('works.listLabel')}>
+    {
+      works.length > 0 ? (
+        <div class="work-list">
+          {works.map((work) => (
+            <article class="work-card">
+              <p class="entry-meta">{work.data.tech.join(' / ')}</p>
+              <h2>
+                <a href={withBase(`/works/${work.id}/`)}>{work.data.title}</a>
+              </h2>
+              <p>{work.data.description}</p>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state compact">
+          <p>{t('works.empty')}</p>
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

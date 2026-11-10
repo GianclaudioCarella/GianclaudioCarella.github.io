@@ -1,0 +1,191 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n';
+import portrait from '../../assets/gian.jpeg';
+
+const cvUrl = 'https://drive.google.com/uc?export=download&id=1WLq4NZn23nQbU_lBJup3fZNlmujHMa5X';
+---
+
+<BaseLayout
+  title={t('about.title')}
+  description="About Gianclaudio Moura Carella, a software engineer working on backend systems, cloud architecture, and AI."
+>
+  <section class="page-head section">
+    <p class="eyebrow">{t('about.eyebrow')}</p>
+    <h1>Gianclaudio Moura Carella</h1>
+    <p class="lead">
+      Software engineer with 13+ years of experience in backend development and cloud-native
+      solutions. I currently work as a senior software engineer at Sage and as founder and AI
+      engineer at Allerac. I live in Barcelona.
+    </p>
+  </section>
+
+  <section class="section prose-grid">
+    <div>
+      <p class="eyebrow">Profile</p>
+      <h2>Backend systems, cloud architecture, and applied AI.</h2>
+      <Image
+        class="article-image"
+        src={portrait}
+        alt="Portrait of Gianclaudio Moura Carella"
+        width={705}
+        height={705}
+        widths={[280, 420, 705]}
+        sizes="(min-width: 700px) 20rem, 100vw"
+      />
+    </div>
+    <div class="prose-stack">
+      <p>
+        I have strong experience designing scalable, secure, and maintainable APIs and services,
+        using cloud architecture. I care about clean code, SOLID design, TDD, and CI/CD pipelines,
+        and I am interested in using technology to solve real-world problems — including AI
+        technologies and chat capabilities.
+      </p>
+      <p>
+        I distill technical complexity into clear solutions, help streamline team processes, and
+        work across stakeholders. I adapt quickly, am comfortable wearing multiple hats, and I
+        invest in work that matters.
+      </p>
+      <p>I speak English, Spanish, and Portuguese.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label={t('about.ledgerLabel')}>
+    <div class="about-ledger">
+      <article>
+        <span>01</span>
+        <h3>Sage · Senior software engineer</h3>
+        <p>December 2020 – present · Barcelona, Spain</p>
+        <p>
+          I lead and contribute to global cloud migration initiatives, virtualizing 20+ on-premises
+          products. I architect scalable backend APIs and microservices, automate infrastructure
+          with Terraform and ARM templates, and apply TDD, SOLID, and clean-code practices with
+          thorough code reviews. I collaborate with cross-functional international teams to refine
+          requirements and improve processes.
+        </p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Allerac · Founder and AI engineer</h3>
+        <p>June 2025 – present · Barcelona, Spain</p>
+        <p>
+          I am building a self-hosted AI agent platform, with isolated units and a chat that can run
+          on a public website, using TypeScript and Next.js. The public repository is
+          <a href="https://github.com/Allerac/allerac-one">Allerac/allerac-one</a>.
+        </p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Mercado Libre · Software engineer</h3>
+        <p>November 2019 – December 2020</p>
+        <p>
+          I developed backend services for marketing automation and experimentation platforms using
+          .NET and containerized microservices. I contributed to container orchestration and
+          deployment pipelines, improving scalability, reliability, and observability, and took part
+          in architectural discussions, code reviews, and automated testing.
+        </p>
+      </article>
+      <article>
+        <span>04</span>
+        <h3>Panamerican Quality Software · Tech lead and senior software engineer</h3>
+        <p>January 2016 – November 2019 · Buenos Aires, Argentina</p>
+        <p>
+          As a full-stack engineer I led the migration of legacy products from VBS to C# for banks,
+          using .NET and Angular. I worked directly with clients on specifications, and after the
+          migration I led the C# developers team with technical guidance and mentoring. I also
+          contributed to architectural decisions that improved performance and maintainability.
+        </p>
+      </article>
+      <article>
+        <span>05</span>
+        <h3>Avanade · Software engineer</h3>
+        <p>June 2012 – December 2016 · São Paulo, Brazil</p>
+        <p>
+          I began as an intern on the Transport Insurance team, working on the Mapfre Connect
+          Calculator in .NET. I collaborated with client analysts on requirements and system
+          improvements, and later managed and coordinated an offshore development team, addressing
+          blockers and supporting knowledge transfer between onshore and offshore members.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section prose-grid">
+    <div>
+      <p class="eyebrow">Education</p>
+      <h2>Studies.</h2>
+    </div>
+    <div class="prose-stack">
+      <p>
+        <strong>Postgraduate in Cloud Computing Architecture</strong> · 2026 – present · Universitat Politècnica
+        de Catalunya (UPC), Barcelona. Advanced studies in cloud computing architecture, with a focus
+        on designing and implementing scalable, secure, and cost-effective cloud solutions, including
+        modern cloud platforms, infrastructure as code, microservices, and cloud-native application development.
+      </p>
+      <p>
+        <strong>Software Development &amp; Analysis (BFA)</strong> · 2010 – 2015 · FATEC Baixada Santista
+        Rubens Lara, Santos, Brazil. Analysis, design, documentation, specification, testing, implementation,
+        and maintenance of computer information systems, with attention to quality, usability, robustness,
+        integrity, and security.
+      </p>
+      <p>
+        <strong>International Relations</strong> · 2004 – 2007 · Centro Universitário Lusiadas. I studied
+        for three years of a four-year programme and did not complete the degree.
+      </p>
+    </div>
+  </section>
+
+  <section class="section prose-grid">
+    <div>
+      <p class="eyebrow">Skills</p>
+      <h2>Tools and methods.</h2>
+    </div>
+    <div class="prose-stack">
+      <p>
+        <strong>Backend:</strong> C#, .NET Framework, ASP.NET MVC, ASP.NET Web API, RESTful APIs, Entity
+        Framework.
+      </p>
+      <p>
+        <strong>Architecture:</strong> Microservices, event-driven systems, modular monolith, SOLID principles,
+        TDD/BDD, design patterns.
+      </p>
+      <p>
+        <strong>Testing and quality:</strong> TDD, unit and integration testing, SpecFlow, and common
+        test frameworks such as NUnit, xUnit, and MSTest.
+      </p>
+      <p>
+        <strong>Cloud and DevOps:</strong> Microsoft Azure (App Services, Functions, API Management, Key
+        Vault, Azure Pipelines), Terraform, Docker, Kubernetes (AKS), CI/CD automation, and infrastructure
+        as code (ARM templates).
+      </p>
+      <p>
+        <strong>Security:</strong> Microsoft Entra ID (Azure AD), OAuth/OpenID, Conditional Access policies.
+      </p>
+      <p>
+        <strong>Frontend:</strong> JavaScript, TypeScript, Angular, React.
+      </p>
+    </div>
+  </section>
+
+  <section class="section prose-grid about-closing">
+    <div>
+      <p class="eyebrow">Contact</p>
+      <h2>How to reach me.</h2>
+    </div>
+    <div class="prose-stack">
+      <p>
+        Email: <a href="mailto:gianclaudio.gc@gmail.com">gianclaudio.gc@gmail.com</a><br />
+        Phone: <a href="tel:+34645863188">+34 645 863 188</a><br />
+        Location: Barcelona
+      </p>
+      <p>
+        <a href="https://github.com/GianclaudioCarella">GitHub</a>
+        ·
+        <a href="https://www.linkedin.com/in/gianclaudiocarella/">LinkedIn</a>
+        ·
+        <a href={cvUrl}>Download CV</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
