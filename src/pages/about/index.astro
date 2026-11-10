@@ -1,8 +1,6 @@
 ---
-import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { t } from '../../i18n';
-import portrait from '../../assets/gian.jpeg';
 
 const cvUrl = 'https://drive.google.com/uc?export=download&id=1WLq4NZn23nQbU_lBJup3fZNlmujHMa5X';
 ---
@@ -25,15 +23,6 @@ const cvUrl = 'https://drive.google.com/uc?export=download&id=1WLq4NZn23nQbU_lBJ
     <div>
       <p class="eyebrow">Profile</p>
       <h2>Backend systems, cloud architecture, and applied AI.</h2>
-      <Image
-        class="article-image"
-        src={portrait}
-        alt="Portrait of Gianclaudio Moura Carella"
-        width={705}
-        height={705}
-        widths={[280, 420, 705]}
-        sizes="(min-width: 700px) 20rem, 100vw"
-      />
     </div>
     <div class="prose-stack">
       <p>
