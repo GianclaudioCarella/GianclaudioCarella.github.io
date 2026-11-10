@@ -908,6 +908,30 @@ pre code {
   color: var(--color-muted);
 }
 
+.experience-project {
+  margin-top: calc(var(--baseline) * 1.4);
+  padding: 0.9rem 1rem 1rem;
+  border: var(--hairline);
+  border-left: 2px solid var(--color-accent);
+  background: var(--color-soft);
+}
+
+.experience-project .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.experience-project h4 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display, var(--font-sans));
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.experience-project p:last-child {
+  margin: 0;
+}
+
 /* About: tighten the rhythm between the profile intro and the experience ledger */
 .prose-grid:has(+ .section .about-ledger) {
   padding-block-end: clamp(2rem, 4vw, 3.5rem);
